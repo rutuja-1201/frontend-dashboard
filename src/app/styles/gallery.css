@@ -1,0 +1,46 @@
+.gallery-container {
+    position: relative;
+    width: 80%; /* Adjust the width as per your need */
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Allow images to overflow the container */
+  }
+  
+  .carousel .slide img {
+    width: 60%; /* Adjust the width as per your need */
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  /* Target side images and apply tilt */
+  .carousel .slide:nth-child(2) img,
+  .carousel .slide:nth-last-child(2) img {
+    transform: rotate(-10deg); /* Tilt left */
+  }
+  
+  .carousel .slide:nth-child(1) img,
+  .carousel .slide:nth-last-child(1) img {
+    transform: rotate(10deg); /* Tilt right */
+  }
+  
+  /* Reset transform for center slide */
+  .carousel .slide.selected img {
+    transform: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add highlight effect */
+  }
+  
+  /* Optional: Add a hover effect to zoom in the image */
+  .carousel .slide img:hover {
+    transform: scale(1.1);
+  }
+  
+
+  .carousel .control-dots {
+    margin-top: 4rem !important;
+  }
